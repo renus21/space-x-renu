@@ -18,7 +18,7 @@ export class SpaceXDataComponent implements OnInit, OnDestroy {
   constructor(private spaceXDataService: SpaceXDataService,
               private router: Router,
               private activatedRoute: ActivatedRoute) {
-    this.filters = { limit: 100 };
+    this.filters = { limit: 1 };
     this.booleanArr = [true, false];
     let yearStart = 2006;
     while (yearStart <= 2020) {
@@ -49,6 +49,8 @@ export class SpaceXDataComponent implements OnInit, OnDestroy {
     this.spaceXDataService.getSpaceXData(this.filters).pipe(takeUntil(this.endSubscriptions$)).subscribe(
       (result: Array<SpaceXDataResponse>) => {
         this.spaceXList = result;
+      }, error => {
+        console.log('error occured');
       }
     );
   }
