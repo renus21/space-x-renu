@@ -1,0 +1,37 @@
+  <div class="outer-container">
+    <h1>SpaceX Launch Programs</h1>
+    <div class="layout-spacex">
+      <div class="filter-container padding-16">
+        <h3>Filters</h3>
+        <div class="padding-16 launch-year">
+          <p>Launch Year</p>
+          <div class="years-filter">
+            <button [ngClass]="{'color-green': filters.launch_year === year, 'color-light-green': filters.launch_year !== year}" 
+            *ngFor="let year of years" (click)="toggleFilter(year, 'launch_year')">
+              {{year}}
+            </button>
+          </div>
+          <p>Successful Launch</p>
+          <div class="years-filter">
+            <button [ngClass]="{'color-green': filters.launch_success === bool, 'color-light-green': filters.launch_success !== bool}"
+            *ngFor="let bool of booleanArr" (click)="toggleFilter(bool, 'launch_success')">
+              {{bool}}
+            </button>
+          </div>
+          <p>Successful Landing</p>
+          <div class="years-filter">
+            <button [ngClass]="{'color-green': filters.land_success === bool, 'color-light-green': filters.land_success !== bool}"
+            *ngFor="let bool of booleanArr" (click)="toggleFilter(bool, 'land_success')">
+              {{bool}}
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="spaces-container">
+        <div *ngFor="let item of spaceXList" class="space-x-card">
+          <app-space-x-card [spaceXListItem] = "item"></app-space-x-card>
+        </div>
+        <div *ngIf="!spaceXList?.length" class="no-data">No data available</div>
+      </div>
+    </div>
+  </div>

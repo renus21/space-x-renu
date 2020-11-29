@@ -1,0 +1,137 @@
+.m-r-16 {
+  margin-right: 16px;
+}
+
+.padding-16 {
+  padding: 16px;
+}
+
+.padding-8 {
+  padding: 8px;
+}
+
+.layout-spacex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+
+  .filter-container {
+    flex-basis: 300px;
+    background-color: white;
+    margin-right: 16px;
+
+    .launch-year {
+      p {
+        border-bottom: 1px solid black;
+        text-align: center;
+        margin: 16px;
+      }
+
+      .years-filter {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        button {
+          border-radius: 5px;
+          font-size: 14px;
+          line-height: 30px;
+          padding: 8px 32px;
+          margin-bottom: 16px;
+          cursor: pointer;
+          outline: none;
+        }
+
+        .color-light-green {
+          background-color: lightgreen;
+          border: 1px solid lightgreen;
+        }
+
+        .color-green {
+          background-color: green;
+          border: 1px solid green;
+        }
+      }
+    }
+  }
+
+  .spaces-container {
+    flex-basis: calc(100% - 348px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    .space-x-card {
+      flex-basis: calc(26% - 28px);
+      border: 1px solid white;
+      border-radius: 5px;
+      background-color: white;
+      margin-bottom: 16px;
+      margin-right: 16px;
+    }
+
+    .space-x-card:nth-child(4n+0) {
+      margin-right: 0;
+    }
+
+    .no-data {
+      width: 100%;
+      text-align: center;
+      font-size: 36px;
+      font-weight: bold;
+      padding: 16px;
+      background: white;
+    }
+  }
+}
+
+@media only screen and (max-width: 699px) {
+  .layout-spacex {
+    .filter-container {
+      flex-basis: 100%;
+      margin-right: 0;
+      margin-bottom: 16px;
+    }
+
+    .spaces-container {
+      flex-basis: 100%;
+
+      .space-x-card {
+        flex-basis: calc(100%);
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 700px) and (max-width: 1023px) {
+  .layout-spacex {
+    .filter-container {
+      flex-basis: 230px;
+      margin-bottom: 16px;
+    }
+
+    .spaces-container {
+      flex-basis: calc(100% - 280px);
+
+      .space-x-card {
+        flex-basis: calc(50% - 10px);
+
+        &:nth-child(2n+0) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 2441px) {
+  .outer-container {
+    max-width: 1440px;
+    padding: 0 20%;
+  }
+}
+
+.outer-container {
+  overflow: hidden;
+}
