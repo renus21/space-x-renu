@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SpaceXDataComponent } from './components/space-x-data/space-x-data.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 
 const routes: Routes = [
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'space-x-data',
     component: SpaceXDataComponent,
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent,
   }
 ];
 

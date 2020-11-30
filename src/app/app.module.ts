@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { SpaceXDataComponent } from './components/space-x-data/space-x-data.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SpaceXCardComponent } from './components/space-x-card/space-x-card.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SpaceXDataComponent,
-    SpaceXCardComponent
+    SpaceXCardComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

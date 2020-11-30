@@ -11,3 +11,7 @@ To build the project with SSR
 
 # npm run serve:ssr
 To start the projet with SSR
+
+# Project realease
+It is deployed with heroku and is available at https://protected-oasis-51191.herokuapp.com
+
