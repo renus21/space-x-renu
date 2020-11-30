@@ -1,6 +1,6 @@
 <div class="space-x-card">
   <div class="image-container">
-    <img [src]="spaceXListItem.links.mission_patch_small" [alt]="spaceXListItem.mission_name">
+    <img [src]="spaceXListItem.links.mission_patch_small" loading="lazy" onerror="this.src='../../assets/rocket.jpg'" [alt]="spaceXListItem.mission_name">
   </div>
   <div class="content-container">
     <p class="bold color-blue">{{spaceXListItem.mission_name}} # {{spaceXListItem.flight_number}}</p>
