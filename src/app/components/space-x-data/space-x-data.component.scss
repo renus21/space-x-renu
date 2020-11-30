@@ -139,4 +139,12 @@
 .outer-container {
   overflow: hidden;
   margin: auto;
+  .dev-info{
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+    bottom: 16px;
+    width: 100%;
+    word-break: break-word;
+}
 }
