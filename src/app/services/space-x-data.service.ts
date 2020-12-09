@@ -15,6 +15,11 @@ export interface SpaceXDataResponse {
   launch_year: string;
   launch_success: boolean;
   links: Links;
+  rocket: {
+    first_stage: {
+      cores: Array<any>;
+    }
+  };
 }
 
 export interface Links {

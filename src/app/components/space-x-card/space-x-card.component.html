@@ -1,6 +1,7 @@
 <div class="space-x-card">
   <div class="image-container">
-    <img [src]="spaceXListItem.links.mission_patch_small" loading="lazy" onerror="this.src='../../assets/rocket.jpg'" [alt]="spaceXListItem.mission_name">
+    <img [src]="spaceXListItem.links.mission_patch_small" loading="lazy" onerror="this.src='../../assets/rocket.jpg'"
+      [alt]="spaceXListItem.mission_name">
   </div>
   <div class="content-container">
     <p class="bold color-blue">{{spaceXListItem.mission_name}} # {{spaceXListItem.flight_number}}</p>
@@ -17,7 +18,11 @@
       <span class="bold">Successful Launch:</span> {{spaceXListItem.launch_success}}
     </div>
     <div>
-      <span class="bold">Successful Landings:</span> true
+      <span class="bold">Successful Landing:</span>
+      <span let *ngFor="let core of spaceXListItem.rocket?.first_stage?.cores; let i = index">
+        {{core.land_success ? true : false}}
+        {{i === spaceXListItem.rocket.first_stage.cores.length-1? '': ','}}
+      </span>
     </div>
   </div>
 
