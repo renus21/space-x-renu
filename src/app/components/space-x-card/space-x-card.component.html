@@ -20,7 +20,7 @@
     <div>
       <span class="bold">Successful Landing:</span>
       <span let *ngFor="let core of spaceXListItem.rocket?.first_stage?.cores; let i = index">
-        {{core.land_success ? true : false}}
+        {{core.land_success === (true || false)? core.land_success : 'null'}}
         {{i === spaceXListItem.rocket.first_stage.cores.length-1? '': ','}}
       </span>
     </div>
