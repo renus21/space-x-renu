@@ -52,10 +52,10 @@ export class SpaceXDataService {
     if (params.limit) {
       httpParams = httpParams.set('limit', String(params?.limit));
     }
-    if (params.launch_success) {
+    if ('launch_success' in params) {
       httpParams = httpParams.set('launch_success', String(params?.launch_success));
     }
-    if (params.land_success) {
+    if ('land_success' in params) {
       httpParams = httpParams.set('land_success', String(params?.land_success));
     }
     if (params.launch_year) {
